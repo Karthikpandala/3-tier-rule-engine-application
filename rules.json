@@ -1,0 +1,51 @@
+[
+  {
+    "rule_string": "(age > 20 && age < 40) && department = 'Marketing'(age > 20 && age < 40) && department = 'Marketing'",
+    "ast": {
+      "type": "operator",
+      "left": {
+        "type": "operand",
+        "left": null,
+        "right": {
+          "type": "operator",
+          "left": {
+            "type": "operand",
+            "left": null,
+            "right": null,
+            "value": ""
+          },
+          "right": {
+            "type": "operand",
+            "left": null,
+            "right": null,
+            "value": "20"
+          },
+          "value": ">"
+        },
+        "value": "(age"
+      },
+      "right": {
+        "type": "operand",
+        "left": null,
+        "right": {
+          "type": "operator",
+          "left": {
+            "type": "operand",
+            "left": null,
+            "right": null,
+            "value": ""
+          },
+          "right": {
+            "type": "operand",
+            "left": null,
+            "right": null,
+            "value": "'Marketing'"
+          },
+          "value": "="
+        },
+        "value": "department"
+      },
+      "value": "||"
+    }
+  }
+]

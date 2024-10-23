@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+    <title>Rule Engine</title>
+</head>
+<body>
+    <h2>Create Rule</h2>
+    <form id="createRuleForm">
+        <input type="text" id="ruleInput" placeholder="Enter rule (e.g. age > 30 AND department = 'Sales')" required>
+        <button type="submit">Create Rule</button>
+    </form>
+    <div id="createRuleResponse"></div>
+
+    <h2>Evaluate Rule</h2>
+    <form id="evaluateRuleForm">
+        <input type="text" id="dataInput" placeholder='Enter data (e.g. {"age": 35, "department": "Sales", "salary": 60000})' required>
+        <button type="submit">Evaluate Rule</button>
+    </form>
+    <div id="evaluateRuleResponse"></div>
+    <button onclick="showRule()">show rules</button>
+    <div id="ruleBook" style="display:none;">
+    <h2>Rule Writing Guide</h2>
+    <p>Use the following guidelines to create your rules:</p>
+    <ul>
+        <li>
+            <strong>Comparison Operators:</strong>
+            <ul>
+                <li><code>&gt;</code> : Greater than (e.g., <code>age > 30</code>)</li>
+                <li><code>&lt;</code> : Less than (e.g., <code>salary < 50000</code>)</li>
+                <li><code>&gt;=</code> : Greater than or equal to (e.g., <code>age >= 18</code>)</li>
+                <li><code>&lt;=</code> : Less than or equal to (e.g., <code>age <= 60</code>)</li>
+                <li><code>=</code> : Equal to (e.g., <code>department = 'Sales'</code>)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Logical Operators:</strong>
+            <ul>
+                <li><code>&&</code> : AND (e.g., <code>age > 30 && department = 'Sales'</code>)</li>
+                <li><code>||</code> : OR (e.g., <code>age < 30 || department = 'HR'</code>)</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Grouping:</strong>
+            <ul>
+                <li>Use parentheses to group conditions (e.g., <code>(age > 30 && department = 'Sales') || (age < 25 && department = 'Intern'</code>).</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Valid Rules:</strong>
+            <ul>
+                <li><code>age > 30 && salary < 60000</code></li>
+                <li><code>department = 'Sales' || age < 25</code></li>
+                <li><code>(age > 20 && age < 40) && department = 'Marketing'</code></li>
+            </ul>
+        </li>
+        <li>
+            <strong>Invalid Rules:</strong>
+            <ul>
+                <li><code>age > && salary < 60000</code> (missing operand)</li>
+                <li><code>department = 'Sales' AND age <</code> (incomplete comparison)</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+    
+</body>
+</html>
